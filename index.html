@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <nav>
+        <div class="profile">
+            <div class="dashboard">
+                <h3>DashBoard</h3>
+            </div>
+            <div class="settings">
+                <h3>Settings</h3>
+            </div>
+        </div>
+
+        <div class="extra-feats">
+            <h3 id="userName"></h3>
+
+            <div class="dark-mode">
+                <i id="lit" class="ri-contrast-2-line"></i>
+                <i id="drk" class="ri-contrast-2-fill"></i>
+            </div>
+
+            <div class="dwnld">
+                <i id="dwnldBtn" class="ri-file-download-line"></i>
+
+                <div id="dwnldMenu" class="dwnld-menu hidden">
+                    <button id="csvBtn">Export as CSV</button>
+                    <!-- <button id="pdfBtn">Export as PDF</button> -->
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="dashboard">
+
+    <main>
+        <div class="overlay">
+            
+            <div id="transac-form">
+                
+                <div class="form-header">
+                    <h2>Add Transaction</h2>
+                    <i id="close" class="ri-close-line"></i>
+                </div>
+                
+                <form>
+                    
+                    <div class="form-inp">
+                        <label>Type</label>
+                        <select id="type" class="frm" required>
+                            <option>Expense</option>
+                            <option>Income</option>
+                        </select>
+                    </div>
+
+                    <div class="form-inp">
+                        <label>Description</label>
+                        <input required id="desc" class="frm" type="text" placeholder="e.g. Amazon, Salary, Cafe">
+                    </div>
+                    
+                    <div class="form-row-1">
+                        
+                        <div class="form-inp">
+                            <label>Amount</label>
+                            <input required id="amount" class="frm" type="number" placeholder="0">
+                        </div>
+                        
+                        <div class="form-inp">
+                            <label>Date</label>
+                            <input required id="date" class="frm" type="date">
+                        </div>
+                    </div>
+                    
+                    <div class="form-inp">
+                        <label>Category</label>
+                        <select required id="categ" class="frm">
+                            <option>Select a category</option>
+                            <option>Food and Dining</option>
+                            <option>Shopping</option>
+                            <option>Recharge Bills</option>
+                            <option>Fuel</option>
+                            <option>Utilities</option>
+                            <option>Salary</option>
+                            <option>Movie</option>
+                            <option>Entertainment</option>
+                            <option>Others</option>
+                        </select>
+                    </div>
+                    
+                    <button class="frm-btn">Save Transaction</button>
+                </form>
+            </div>
+        </div>
+        
+        <section id="sec1">
+            <div class="transactions">
+                
+                <div class="add-btn">
+                    <button class="add-btn1">
+                        <img class="add-img" src="assets/plus-solid-full.svg" alt="">
+                        <p>Add Transaction</p>
+                    </button>
+                </div>
+                
+                <div class="curr-bal">
+                    
+                    <div class="card-icon" style="background-color: #DCEAFE;">
+                        <img class="i-tag" src="assets/building-columns-solid-full.svg" alt="balance-pic">
+                    </div>
+                    
+                    <div class="transac-cont">
+                        <h5>Current Balance</h5>
+                        <h3 id="currBalance"></h3>
+                    </div>
+                </div>
+
+                <div class="tot-incm">
+                    <div class="card-icon" style="background-color: #DCFCE7;">
+                        <img class="i-tag" src="assets/arrow-trend-up-solid-full.svg" alt="">
+                    </div>
+                    
+                    <div class="transac-cont">
+                        <h5>Total Income</h5>
+                        <h3 id="totIncome"></h3>
+                    </div>
+                </div>
+                
+                <div class="tot-exp">
+                    
+                    <div class="card-icon" style="background-color: #FEE2E2;">
+                        <img class="i-tag" src="assets/arrow-trend-down-solid-full.svg" alt="">
+                    </div>
+                    
+                    <div class="transac-cont">
+                        <h5>Total Expense</h5>
+                        <h3 id="totExpense"></h3>
+                    </div>
+                </div>
+                
+                <div class="tot-transaction">
+                    
+                    <div class="card-icon" style= "background-color: #EDE9FE;">
+                        <img class="i-tag" src="assets/piggy-bank-solid-full.svg" alt="">
+                    </div>
+                    
+                    <div class="transac-cont">
+                        <h5>Total Transactions </h5>
+                        <h3 id="totTransac"></h3>
+                    </div>
+                </div>
+
+            </div>
+            
+            
+            <div class="timed-graph">
+                <canvas id="expenseChart">
+                    
+                </canvas>
+            </div>
+            <!-- </div> -->
+        
+            <div class="transactions-history">
+                <div id="reset">
+                    <h1>All Transactions</h1>
+                    <button class="reset"><strong>Reset</strong></button>
+                </div>
+                
+                <div class="controls">
+                    <div class="searchBar">
+                        <i class="ri-search-line"></i>
+                        <input type="text" placeholder="Search Transactions...">
+                    </div>
+                    
+                    <select id="hist-select">
+                        <option>All Types</option>
+                        <option>Income Only</option>
+                        <option>Expense Only</option>
+                    </select>
+                </div>
+                
+                
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th>Date</th>
+                                <th>Category</th>
+                                <th>Amount</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody id="table-body"></tbody>
+                    </table>
+                </div>
+                
+                <div class="insights">
+                    <h3>Insights</h3>
+                    
+                    <div class="insight-item">
+                        <span>Highest Expense</span>
+                        <span id="maxExpense">- </span>
+                    </div>
+                    
+                    <div class="insight-item">
+                        <span>Highest Income</span>
+                        <span id="maxIncome">- </span>
+                    </div>
+                    
+                    <div class="insight-item">
+                        <span>Most Used Category</span>
+                        <span id="mostCategory">- </span>
+                    </div>
+                    
+                    <div class="insight-item">
+                        <span>Largest Transaction</span>
+                        <span id="largestTransaction">- </span>
+                    </div>
+                    
+                    <div class="insight-item">
+                        <span>Savings Rate</span>
+                        <span id="saveRate">- </span>
+                    </div>
+                </div>
+                
+            <!-- </div> -->
+            
+            <div class="pie-graph">
+                <div class="pie-head">
+                        <h3>Category wise Analysis</h3>
+                        
+                        <select id="categoryFilter">
+                            <option value="Expense">Expense</option>
+                            <option value="Income">Income</option>
+                        </select>
+                    </div>
+                    
+                    <canvas id="pie-graph"></canvas>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <div id="settings" class="hidden">
+        <h1>Settings</h1>
+        <p>Manage your profile and app formatting.</p>
+        
+        <div class="profile-dets">
+            <h2>Profile Details</h2>
+            
+            <div class="dets">
+                        
+                <div class="name">
+                    <label>Full Name: </label>
+                    <input id="name" type="text" placeholder="Person1">
+                </div>
+                
+                <div class="currency">
+                    <label for="currency">Primary Currency: </label>
+                    <select id="currency">
+                        <option value="₹">INR (₹)</option>
+                        <option value="$">USD ($)</option>
+                        <option value="€">EUR (€)</option>
+                        <option value="£">GBP (£)</option>
+                        <option value="¥">JPY (¥)</option>
+                    </select>
+                </div>
+            </div>
+            <button id="saveSettings">Save Changes</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script> -->
+    <script src="script.js"></script>
+</body>
+
+</html>
