@@ -162,73 +162,72 @@
                     
                 </canvas>
             </div>
-            <!-- </div> -->
+
         
-            <div class="transactions-history">
-                <div id="reset">
-                    <h1>All Transactions</h1>
-                    <button class="reset"><strong>Reset</strong></button>
+        <div class="transactions-history">
+            <div id="reset">
+                <h1>All Transactions</h1>
+                <button class="reset"><strong>Reset</strong></button>
+            </div>
+            
+            <div class="controls">
+                <div class="searchBar">
+                    <i class="ri-search-line"></i>
+                    <input type="text" placeholder="Search Transactions...">
                 </div>
                 
-                <div class="controls">
-                    <div class="searchBar">
-                        <i class="ri-search-line"></i>
-                        <input type="text" placeholder="Search Transactions...">
-                    </div>
+                <select id="hist-select">
+                    <option>All Types</option>
+                    <option>Income Only</option>
+                    <option>Expense Only</option>
+                </select>
+            </div>
+            
+            
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
                     
-                    <select id="hist-select">
-                        <option>All Types</option>
-                        <option>Income Only</option>
-                        <option>Expense Only</option>
-                    </select>
+                    <tbody id="table-body"></tbody>
+                </table>
+            </div>
+            
+            <div class="insights">
+                <h3>Insights</h3>
+                
+                <div class="insight-item">
+                    <span>Highest Expense</span>
+                    <span id="maxExpense">- </span>
                 </div>
                 
-                
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Description</th>
-                                <th>Date</th>
-                                <th>Category</th>
-                                <th>Amount</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        
-                        <tbody id="table-body"></tbody>
-                    </table>
+                <div class="insight-item">
+                    <span>Highest Income</span>
+                    <span id="maxIncome">- </span>
                 </div>
                 
-                <div class="insights">
-                    <h3>Insights</h3>
-                    
-                    <div class="insight-item">
-                        <span>Highest Expense</span>
-                        <span id="maxExpense">- </span>
-                    </div>
-                    
-                    <div class="insight-item">
-                        <span>Highest Income</span>
-                        <span id="maxIncome">- </span>
-                    </div>
-                    
-                    <div class="insight-item">
-                        <span>Most Used Category</span>
-                        <span id="mostCategory">- </span>
-                    </div>
-                    
-                    <div class="insight-item">
-                        <span>Largest Transaction</span>
-                        <span id="largestTransaction">- </span>
-                    </div>
-                    
-                    <div class="insight-item">
-                        <span>Savings Rate</span>
-                        <span id="saveRate">- </span>
-                    </div>
+                <div class="insight-item">
+                    <span>Most Used Category</span>
+                    <span id="mostCategory">- </span>
                 </div>
                 
-            <!-- </div> -->
+                <div class="insight-item">
+                    <span>Largest Transaction</span>
+                    <span id="largestTransaction">- </span>
+                </div>
+                
+                <div class="insight-item">
+                    <span>Savings Rate</span>
+                    <span id="saveRate">- </span>
+                </div>
+            </div>
+
             
             <div class="pie-graph">
                 <div class="pie-head">
@@ -275,7 +274,6 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script> -->
     <script src="script.js"></script>
 </body>

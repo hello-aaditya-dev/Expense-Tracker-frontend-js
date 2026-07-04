@@ -27,29 +27,19 @@ nav {
 .profile {
     height: 100%;
     width: 100%;
-    /* background-color: yellow; */
     display: flex;
     align-items: center;
     gap: 30px;
 }
 
 .profile .dashboard {
-    /* height: 100%;
-    width: 100%; */
-    /* background-color: rgb(98, 98, 225); */
     margin-left: 50px;
 }
 
-/* .profile .settings {
-    height: 100%;
-    width: 100%;
-    background-color: purple;
-} */
 
 .extra-feats {
     height: 100%;
     width: 100%;
-    /* background-color: green; */
     display: flex;
     justify-content: end;
     align-items: center;
@@ -78,19 +68,16 @@ nav {
 
 .extra-feats .dark-mode i{
     font-size: 25px;
-    /* background-color: yellow; */
 }
 
 .extra-feats .dwnld i{
     font-size: 25px;
-    /* background-color: yellow; */
 }
 
 main {
     height: 92%;
     width: 100%;
     background:#F8FAFC;;
-    /* background-color: rgb(28, 0, 0); */
 }
 
 #sec1 {
@@ -119,7 +106,6 @@ main {
 
 .timed-graph {
     grid-area: timed-graph;
-    /* background-color: purple; */
     border-radius: 12px;
     height: 350px;
     background:white;
@@ -205,7 +191,6 @@ main {
 }
 
 .pie-head select {
-    /* font-size: 15px; */
     padding: 5px;
 }
 
@@ -314,7 +299,6 @@ main {
 .transac-cont {
     height: 70%;
     width: 100%; 
-    /* background-color: red; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -347,73 +331,51 @@ main {
 }
 
 .searchBar{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    padding:15px 20px;
-
-    border-radius:15px;
-
-    flex:1;
-    background:#F1F5F9;
-    border:1px solid #CBD5E1;
-
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    border-radius: 15px;
+    flex: 1;
+    background: #F1F5F9;
+    border: 1px solid #CBD5E1;
 }
 
-.searchBar input{
-
-    background:none;
-
-    border:none;
-
-    outline:none;
-
-    color:#334155;
-
-    width:100%;
-
+.searchBar input {
+    background: none;
+    border: none;
+    outline: none;
+    color: #334155;
+    width: 100%;
 }
 
 #hist-select{
-
-    width:320px;
-
-    background:#F1F5F9;
-
-    color:white;
-
-    border:1px solid #CBD5E1;
-
-
-    border-radius:15px;
-
-    padding:15px;
-
+    width: 320px;
+    background: #F1F5F9;
+    color: white;
+    border: 1px solid #CBD5E1;
+    border-radius: 15px;
+    padding: 15px;
 }
 
-table{
-    width:100%;
-    border-collapse:collapse;
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
 thead th {
-    text-align:left;
-    color:#475569;
-    border-bottom:2px solid #E2E8F0;
-    font-size:20px;
-    font-weight:600;
-    padding:18px 15px;
-    /* border-bottom:1px solid #3a455a; */
+    text-align: left;
+    color: #475569;
+    border-bottom: 2px solid #E2E8F0;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 18px 15px;
 }
 
-tbody td{
-    padding:15px 10px;
-    border-bottom:1px solid #F1F5F9;
-    font-size:15px;
+tbody td {
+    padding: 15px 10px;
+    border-bottom: 1px solid #F1F5F9;
+    font-size: 15px;
 }
 
 tbody td,span {
@@ -421,54 +383,54 @@ tbody td,span {
 }
 
 
-.category{
-    display:inline-block;
-    padding:8px 16px;
-    border-radius:10px;
-    background:#131c2d;
-    font-size:18px;
+.category {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background: #131c2d;
+    font-size: 18px;
 }
 
-.shopping{
-    color:#fff;
+.shopping {
+    color: #fff;
 }
 
-.salary{
-    color:#fff;
+.salary {
+    color: #fff;
 }
 
-.expense{
-    color:#d62828;
-    font-weight:600;
+.expense {
+    color: #d62828;
+    font-weight: 600;
 }
 
-.income{
-    color:#15803d;
-    font-weight:600;
+.income {
+    color: #15803d;
+    font-weight: 600;
 }
 
-.actions{
-    display:flex;
-    align-items:center;
-    gap:30px;
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
 }
 
-.actions i{
-    font-size:20px;
-    cursor:pointer;
+.actions i {
+    font-size: 20px;
+    cursor: pointer;
 }
 
-.edit{
-    color:#2563EB;
+.edit {
+    color: #2563EB;
 }
 
-.delete{
-    color:#DC2626;
+.delete {
+    color: #DC2626;
 }
 
-.actions i:hover{
-    transform:scale(1.15);
-    transition:.2s;
+.actions i:hover {
+    transform: scale(1.15);
+    transition: .2s;
 }
 
 
@@ -482,7 +444,6 @@ tbody td,span {
 .reset {
     height:35px;
     width: 76px;
-    /* background-color: rgb(237, 57, 57); */
     color: whitesmoke;
     font-size: 15px;
     cursor: pointer;
@@ -499,16 +460,10 @@ tbody td,span {
 
 #transac-form {
     width: 650px;
-    /* display: none; */
-    /* height: 300px; */
     border-radius: 20px;
     background-color: whitesmoke;
     border: 2.5px solid black;
     padding: 20px;
-    /* position: absolute; */
-    /* display: flex;
-    flex-direction: column;
-    gap: 20px; */
 }
 
 .form-header {
@@ -532,46 +487,43 @@ tbody td,span {
 }
 
 label {
-    font-size:18px;
-    margin-bottom:10px;
-    color:#111827;
-    font-weight:600;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #111827;
+    font-weight: 600;
 
 }
 
-.frm{
-    width:100%;
-    padding:8px 10px;
-    font-size:20px;
-    border:2px solid whitesmoke;
-    border-radius:14px;
+.frm {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 20px;
+    border: 2px solid whitesmoke;
+    border-radius: 14px;
 }
 
 
-.form-row-1{
-    display:flex;
-    gap:25px;
+.form-row-1 {
+    display: flex;
+    gap: 25px;
 }
 
 
 .frm-btn {
-
     width: 50%;
     padding: 12px;
     border: none;
     border-radius: 14px;
-    /* background-color: black;
-    color: whitesmoke; */
     font-size: 20px;
     cursor: pointer;
     margin-top: 20px;
     margin-left: 25%;
     transition:.3s;
     background:#2563EB;
-    color:white;
+    color: white;
 }
 
-button:hover{
+button:hover {
     background:#1D4ED8;
 }
 
@@ -593,8 +545,6 @@ button:hover{
     border:1px solid #CBD5E1;
 }
 
-
-/* AI code */
 
 body.dark{
     background:#0f172a;
@@ -741,7 +691,6 @@ body.dark #currency {
     color: whitesmoke;
 }
 
-/* AI Code */
 
 html{
     transition: background-color .45s ease;
@@ -749,6 +698,7 @@ html{
 
 body,
 nav,
+div,
 main,
 button,
 input,
@@ -854,11 +804,6 @@ label{
     color:#64748b;
 }
 
-/* #name,
-#currency{
-    border-color:#3b82f6;
-    box-shadow:0 0 0 4px rgba(59,130,246,.18);
-} */
 
 #currency{
     cursor:pointer;

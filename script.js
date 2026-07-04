@@ -105,8 +105,6 @@ function addRow(t) {
             <i class="ri-delete-bin-fill delete"></i>
         </td>
     `;
-    // <td>${date.value}</td>
-    // <td><span class="categ">${category.value}</span></td>
 
     tableBody.appendChild(tableRow);
 }
@@ -131,7 +129,7 @@ function update() {
 }
 
 function delTransac(id) {
-    const ind = transactions.findIndex(t => t.id === id); //ai gen
+    const ind = transactions.findIndex(t => t.id === id);
 
     transactions.splice(ind, 1);
     saveTransactions();
@@ -186,9 +184,6 @@ function filterTransactions() {
         } else if (option === "Expense Only" && t.type === "Expense") {
             addRow(t);
         }
-        //  else {
-        //     addRow(t);
-        // }
     });
 }
 
@@ -216,59 +211,6 @@ function monthlyData() {
     return { months, incomeData, expenseData };
 }
 
-
-// function renderChart() {
-//     const { months, incomeData, expenseData } = monthlyData();
-//     // console.log(incomeData);
-//     // console.log(expenseData);
-//     // console.log(transactions);
-
-//     const ctx = document.getElementById('expenseChart').getContext("2d");
-
-//     if(chart)   chart.destroy();
-
-//     chart = new Chart(ctx, {
-//         type: "bar",
-//         data: {
-//             labels: months
-//             // "Jan", "Feb", "Mar", "Apr", "May", "Jun", 
-//             // "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-//             ,
-
-//             // datasets: [
-//             //     {
-//             //         label: "Income",
-//             //         data: incomeData,
-//             //         backgroundColor: "#4CAF50"
-//             //     },
-
-//             //     {
-//             //         label: "Expense",
-//             //         data: expenseData,
-//             //         backgroundColor: "#F44336"
-//             //     }
-//             // ]
-//             datasets: [
-//                     {
-//                         label: "Income",
-//                         data: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120],
-//                         backgroundColor: "green"
-//                     },
-//                     {
-//                         label: "Expense",
-//                         data: [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115],
-//                         backgroundColor: "red"
-//                     }
-//                 ]
-//         }
-//     });
-//     console.log(chart.data.datasets);
-
-//     // console.log(typeof incomeData[5]);
-//     // console.log(typeof expenseData[6]);
-//     // console.log(transactions);
-
-// }
 
 
 function renderChart() {
@@ -390,7 +332,6 @@ function updateInsights() {
     highestIncome.textContent = currentCurrency + maxIncome;
     largestTransaction.textContent = currentCurrency + largest;
 
-    // AI code ->
     if (totalIncome === 0)
         savingRate.textContent = "0%";
     else {
@@ -452,11 +393,6 @@ function exportCSV() {
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    // console.log(description);
-    // console.log(description instanceof HTMLInputElement);
-    // console.log(description.getAttribute("id"));
-    // console.log(description.value);
-
     const transac = {
         id: Date.now(),
         type: type.value,
@@ -482,34 +418,12 @@ form.addEventListener("submit", (e) => {
         editId = null;
     }
 
-    // addRow(transac);
-
     tableBody.innerHTML = "";
     transactions.forEach(addRow);
     saveTransactions();
     update();
     renderChart();
     renderPieChart();
-
-    // const tableRow = document.createElement("tr");
-
-    // tableRow.innerHTML = `
-    //     <td>${description.value}</td>
-    //     <td>${date.value}</td>
-    //     <td><span class="categ">${category.value}</span></td>
-    //     <td class="${type.value === "Expense" ? "expense" : "income"}">
-    //         ${type.value === "Expense" ? "-" : "+"}₹${amount.value} 
-    //         // this is ai generated line..
-    //     </td>
-    //     <td class="actions">
-    //         <i class="ri-pencil-fill edit"></i>
-    //         <i class="ri-delete-bin-fill delete"></i>
-    //     </td>
-    // `;
-    // // <td>${date.value}</td>
-    // // <td><span class="categ">${category.value}</span></td>
-
-    // tableBody.appendChild(tableRow);
 
     overlay.style.display = "none";
     form.reset();
@@ -572,8 +486,6 @@ settingsBtn.style.cursor = "pointer";
 dashboardBtn.style.cursor = "pointer";
 
 settingsBtn.addEventListener('click', () => {
-    // settingsBtn.style.cursor = "pointer";
-    // dashboardBtn.style.cursor = "pointer";
 
     dashboard.classList.add("hidden");
     settings.classList.remove("hidden");
